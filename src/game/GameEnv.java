@@ -15,13 +15,13 @@ public class GameEnv {
     private View view = null;
 
     private GameEnv () {};
-
     public static GameEnv getGame(){
         if(env == null){
             env = new GameEnv();
         }
         return(env);
     }
+
     public void setup(){
         model = Model.getModel();
         controller = Controller.getController();
@@ -37,15 +37,4 @@ public class GameEnv {
     public void quit(){
         run = false;
     }
-
-    public Model getModel(){
-        return model;
-    }
-    public View getView(){
-        return view;
-    }
-    public Controller getController(){
-        return controller;
-    }
-
 }

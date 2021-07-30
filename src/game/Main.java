@@ -3,8 +3,7 @@ package game;
 public class Main {
 
 	/**
-	 * main function that starts and ends the game
-	 * @param args
+	 * Main Loop
 	 */
 	public static void main(String[] args) {
 		GameEnv env = GameEnv.getGame();
