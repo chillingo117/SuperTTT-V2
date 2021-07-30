@@ -31,6 +31,7 @@ public class GameEnv {
     public void run() {
         while(run){
             view.displayBoard();
+            view.makeTurn();
         }
     }
 

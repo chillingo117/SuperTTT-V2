@@ -1,10 +1,26 @@
 package game;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Model {
     private static Model model = null;
-    private GameEnv env = GameEnv.getGame();
+    private final GameEnv env = GameEnv.getGame();
 
-    private String board = "Hello World";
+    private String currentPlayer = "X";
+    private String[] board = {
+            " "," "," ",   " "," "," ",   " "," "," ",
+            " "," "," ",   " "," "," ",   " "," "," ",
+            " "," "," ",   " "," "," ",   " "," "," ",
+
+            " "," "," ",   " "," "," ",   " "," "," ",
+            " "," "," ",   " "," "," ",   " "," "," ",
+            " "," "," ",   " "," "," ",   " "," "," ",
+
+            " "," "," ",   " "," "," ",   " "," "," ",
+            " "," "," ",   " "," "," ",   " "," "," ",
+            " "," "," ",   " "," "," ",   " "," "," ",
+    };
 
     private Model(){};
 
@@ -15,8 +31,22 @@ public class Model {
         return model;
     }
 
-    public String getBoard () {
+    public String[] getBoard () {
         return board;
+    }
+
+    public void makeTurn(String playerChar, int x, int y){
+        int location = ((x-1) + (y-1)*9);
+        board[location] = playerChar;
+        if(playerChar.equals("X")){
+            currentPlayer = "O";
+        } else {
+            currentPlayer = "X";
+        }
+    }
+
+    public String getCurrentPlayer(){
+        return currentPlayer;
     }
 
     public void quit() {

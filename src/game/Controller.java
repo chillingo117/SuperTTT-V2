@@ -13,6 +13,10 @@ public class Controller {
         return controller;
     }
 
+    public void makeTurn(String playerChar, int x, int y){
+        model.makeTurn(playerChar, x, y);
+    }
+
     public boolean receiveUserInput(String input){
         if (input.equals("yes")){
             model.quit();
